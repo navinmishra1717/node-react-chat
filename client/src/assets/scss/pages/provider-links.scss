@@ -1,0 +1,299 @@
+.provider-links {
+  &__form {
+    //FORM HEADER COMPONENTS
+    &__header {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+      align-items: center;
+      .MuiFormControl-root {
+        min-width: 200px !important;
+      }
+    }
+
+    &__provider {
+      min-width: 250px;
+    }
+
+    &__provider-info {
+      span:first-child {
+        font-weight: 500;
+        display: inline-block;
+        padding: 0 10px;
+      }
+      span:last-child {
+        color: var(--color-gray-2);
+      }
+    }
+
+    //FORM BUTTONS
+    &__buttons {
+      position: fixed;
+      top: 20%;
+      right: 5%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      & > * {
+        opacity: 0.5;
+      }
+      & > *:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  //INFO HELPERS
+  &__helpers {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+    h4 {
+      font-weight: 500;
+    }
+  }
+}
+
+//INDIVIDUAL LINK BOX
+
+.provider-link {
+  display: grid;
+  gap: var(--gap-small);
+  padding: calc(var(--default-vertical-margin) * 2) 0;
+  border-bottom: 2px solid #e0e0e0;
+  align-items: start;
+  @include for-medium-screen-up {
+    grid-template-columns: 80% 1fr 1fr;
+    grid-template-areas:
+      "entry entry entry"
+      "mapped mapped mapped"
+      "gen-link gen-link action";
+    padding: var(--default-vertical-margin) 0;
+  }
+  @include for-desktop-up {
+    grid-template-columns: 80% 1fr 16%;
+    grid-template-areas:
+      "entry mapped action"
+      "gen-link gen-link gen-link";
+  }
+
+  @include for-medium-desktop-up {
+    grid-template-columns: 80% 1fr 9%;
+    gap: 0.1rem;
+  }
+  //ENTRY_ITEMS
+  &__entry-items {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    @include for-medium-screen-up {
+      grid-area: entry;
+    }
+    @include for-desktop-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  //MAPPED_ITEMS
+  &__mapped-items {
+    display: grid;
+    gap: 0.5rem;
+    > * {
+      width: 100%;
+    }
+    @include for-medium-screen-up {
+      grid-template-columns: 1fr;
+      grid-area: mapped;
+      // align-self: start;
+    }
+
+    @include for-desktop-up {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      align-items: flex-start;
+    }
+  }
+
+  //ACTION ITEMS
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    @include for-medium-desktop-up {
+      gap: 0.1rem;
+    }
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @include for-medium-screen-up {
+      grid-area: action;
+    }
+    .MuiFormControlLabel-root {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__dropdowns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include for-desktop-up {
+      flex-direction: row;
+    }
+    .MuiFormControl-root {
+      width: 100%;
+      @include for-desktop-up {
+        width: 200px;
+      }
+    }
+  }
+
+  &__link-id {
+    @include for-desktop-up {
+      max-width: 90px;
+    }
+  }
+
+  &__adv-subid {
+    @include for-desktop-up {
+      max-width: 90px;
+    }
+  }
+
+  .vertical-divider {
+    display: none;
+    margin-top: 10px;
+    @include for-desktop-up {
+      display: block;
+    }
+  }
+
+  .horizontal-divider {
+    align-self: center;
+    @include for-medium-screen-up {
+      display: none;
+    }
+  }
+}
+
+.related-tag-box {
+  width: 250px;
+  overflow: "auto";
+  max-height: 70vh;
+  @include for-medium-screen-up {
+    width: 500px;
+  }
+}
+
+.tag-box {
+  border-width: 2px;
+  border-color: green !important;
+  &:hover {
+    cursor: pointer;
+    border-color: gray !important;
+
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &__tag {
+    color: green;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+  &__rules {
+    padding-left: 20px;
+    letter-spacing: 0.1rem;
+    color: green;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--disabled {
+    border-color: orange !important;
+  }
+}
+.tag-box--disabled .tag-box__tag {
+  color: orange;
+}
+.tag-box--disabled .tag-box__rules {
+  color: orange;
+}
+
+// Dynamic Parameter Info
+
+.dynamic-parameter-info {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    padding: 2px;
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: right;
+    color: whitesmoke;
+  }
+}
+
+//Duplicate Link Warning Box
+
+.provider-links__duplicates {
+  &__heading {
+    color: var(--color-primary-blue-2);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__confirm {
+    color: var(--color-primary-blue-2);
+    text-align: center;
+  }
+}
+.provider-links__duplicates-in-form {
+  text-align: left;
+  &__id:not(:last-child)::after {
+    content: ", ";
+  }
+
+  &__buttons {
+    display: flex;
+    gap: var(--gap-small);
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.active-rules__warning-modal {
+  h3 {
+    color: #333;
+    font-weight: normal;
+  }
+}
+
+.providerLinks-filter {
+  &__container {
+    width: 100%;
+  }
+  &__selections {
+    width: 100%;
+    display: flex;
+    gap: var(--gap-small);
+    flex-direction: column;
+    @include for-bigger-middle-screen {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+      gap: var(--gap-small);
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.linked-account {
+  // temp width while developing
+  width: 70%;
+  margin: 20px auto;
+
+  fieldset {
+    margin-top: 20px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+}

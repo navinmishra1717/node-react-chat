@@ -1,0 +1,108 @@
+.action-icon {
+  cursor: pointer;
+  margin-right: 20px;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.3) !important;
+  }
+}
+
+.rowSelected {
+  background-color: hsla(92, 100%, 16%, 0.4);
+}
+.tableRow:hover {
+  background-color: var(--color-primary-blue-opaque);
+}
+
+.list-table {
+  //Table Cells
+  .MuiTableCell-root {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    @include for-medium-screen-up {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+  }
+  .Mui-checked {
+    span {
+      color: green !important;
+    }
+    color: green !important;
+    + .MuiSwitch-track {
+      background-color: green !important ;
+    }
+  }
+  input {
+    &:checked + svg path {
+      fill: hsl(92, 100%, 16%) !important;
+    }
+  }
+}
+
+.editableCell {
+  cursor: text;
+  &:hover {
+    background-color: var(--color-primary-blue-opaque-2);
+  }
+}
+
+.table_header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    fill: gray;
+    height: 20px;
+  }
+}
+
+.noData_container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  @include for-medium-screen-up {
+    font-size: 30px;
+  }
+
+  h3 {
+    margin-right: 10px;
+  }
+}
+
+.table__container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.table-selection-tab {
+  margin-bottom: var(--default-vertical-margin);
+}
+
+.hover-cell {
+  position: relative;
+  &__button {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: translate(5%, -20%);
+    border-radius: 125vw;
+    background: var(--color-gray-2-lighter-2);
+    color: var(--color-primary-blue);
+    font-weight: 700;
+    text-transform: initial;
+  }
+  &__button:hover {
+    background: var(--color-primary-blue);
+    color: #fff;
+  }
+}
+
+.hover-cell:hover .hover-cell__button {
+  visibility: visible;
+  opacity: 1;
+}

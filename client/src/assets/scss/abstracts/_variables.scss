@@ -1,0 +1,25 @@
+/*
+DEFAULT VALUES FOR COLOR AND SPACING
+*/
+:root {
+  --color-primary-blue: hsl(231, 48%, 48%);
+  --color-primary-blue-2: hsl(231, 48%, 58%);
+  --color-primary-blue-opaque: hsla(231, 48%, 48%, 30%);
+  --color-primary-blue-opaque-2: hsla(231, 48%, 48%, 35%);
+  --color-gray: hsl(213, 6%, 39%);
+  --color-darkyellow: #f0a92f;
+  --color-yellow: hsl(33, 72%, 47%);
+  --color-green: hsl(118, 37%, 30%);
+  --color-green-lighter: hsl(118, 37%, 40%);
+  --color-border-gray: #dadce0;
+  --default-vertical-margin: 20px;
+  --default-padding-small: 10px;
+  --default-padding-medium: 20px;
+  --small-letter-spacing: 0.1rem;
+  --color-gray-2: #a9a9a9;
+  --color-gray-2-lighter: hsl(120, 5%, 80%);
+  --color-gray-2-lighter-2: hsl(120, 5%, 93%);
+  --gap-small: 1rem;
+  --gap-big: 5rem;
+  --gap-medium: 3rem;
+}

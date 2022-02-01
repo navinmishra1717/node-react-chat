@@ -1,0 +1,41 @@
+.tick line {
+  stroke: #c0c0bb;
+}
+.tick text {
+  fill: #635f5d;
+}
+
+.marks path {
+  stroke: #81b7e3;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.marks rect {
+  fill: #396f9b;
+}
+
+.marks circle {
+  fill: #396f9b;
+}
+
+.tick text {
+  fill: #635f5d;
+}
+
+.axis-label {
+  font-size: 1.5rem;
+  fill: #635f5d;
+}
+
+.chart-axis-select {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  @include for-medium-screen-up {
+    & > * {
+      max-width: 300px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.content__header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 1rem;
+  flex-wrap: wrap;
+  &__icon {
+    font-size: 2rem;
+  }
+  @include for-medium-screen-up {
+    padding-bottom: 2px;
+    font-size: 1.1rem;
+    &__icon {
+      font-size: 4rem;
+      margin-right: 10px;
+    }
+  }
+
+  &__text {
+    span {
+      color: var(--color-gray);
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 200;
+  }
+}

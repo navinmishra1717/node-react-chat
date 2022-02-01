@@ -1,0 +1,81 @@
+.form {
+  display: grid;
+  @include for-medium-screen-up {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    grid-template-areas:
+      "pid details"
+      "status details"
+      "name details"
+      "controls controls";
+  }
+
+  &__name {
+    @include for-medium-screen-up {
+      grid-area: name;
+    }
+  }
+
+  &__details {
+    @include for-medium-screen-up {
+      grid-area: details;
+    }
+
+    width: 80%;
+    margin: auto;
+    label {
+      margin-top: 10px;
+    }
+    textarea {
+      padding-top: 15px;
+    }
+  }
+
+  &__pid {
+    @include for-medium-screen-up {
+      grid-area: pid;
+    }
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: center;
+    h3 {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  &__status {
+    @include for-medium-screen-up {
+      grid-area: status;
+    }
+
+    display: flex;
+    h3 {
+      margin-right: 10px;
+      font-weight: 400;
+    }
+  }
+
+  &__controls {
+    @include for-medium-screen-up {
+      grid-area: controls;
+    }
+    margin: auto;
+    margin-top: var(--default-vertical-margin);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.dark-grey-text {
+  color: grey;
+  font-weight: 400;
+}

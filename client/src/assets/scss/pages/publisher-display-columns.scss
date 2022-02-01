@@ -1,0 +1,22 @@
+.publisher-display-columns {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  padding-top: 10px;
+  max-width: 1000px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+}

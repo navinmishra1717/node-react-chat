@@ -1,0 +1,51 @@
+.vertical-tab__menu {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    li {
+      text-decoration: none;
+      color: var(--color-gray);
+    }
+  }
+
+  &__item {
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    flex-direction: column;
+    background: transparent;
+    padding: var(--default-padding-small) 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      left: 0;
+      top: 0;
+      border-left: 5px solid var(--color-primary-blue);
+      margin: auto;
+      height: 100%;
+      width: 100%;
+      background: var(--color-primary-blue-opaque);
+      padding: var(--default-padding-small) 0;
+      visibility: hidden;
+      border-radius: 2px;
+      transition: all 0.15s ease-in-out;
+    }
+    //creating the border below when hover over item
+    &:hover {
+      color: var(--color-primary-blue);
+    }
+
+    &--active {
+      color: var(--color-primary-blue);
+      &:before {
+        visibility: visible;
+      }
+    }
+  }
+}

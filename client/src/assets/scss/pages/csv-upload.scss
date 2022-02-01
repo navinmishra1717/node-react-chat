@@ -1,0 +1,125 @@
+.csv-upload {
+  text-align: center;
+  &__container {
+    padding: var(--default-padding-medium);
+    border: 1px solid #e0e0e0;
+  }
+  &__filterInput {
+    max-width: 500px;
+  }
+  &__advertisers {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include for-medium-screen-up {
+      min-width: 400px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      h3 {
+        width: 25%;
+      }
+    }
+    h3 {
+      font-weight: normal;
+    }
+  }
+
+  &__active {
+    --circle-radius: 5px;
+    &::before {
+      content: "";
+      border: 3px solid var(--color-green);
+      border-radius: 50%;
+      margin-right: 20px;
+      width: 20px;
+      display: inline-block;
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+      background-color: var(--color-green);
+    }
+  }
+
+  &__inactive {
+    color: gray;
+    &::before {
+      content: "";
+      border: 3px solid var(--color-yellow);
+      border-radius: 50%;
+      margin-right: 20px;
+      display: inline-block;
+      width: var(--circle-radius);
+      height: var(--circle-radius);
+      background-color: var(--color-yellow);
+    }
+  }
+
+  &__success {
+    display: flex;
+    padding-left: 4px;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+    &__msg {
+      width: 75%;
+    }
+  }
+  &__loading {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    width: 75%;
+  }
+
+  &__upload-btn {
+    font-size: 10px;
+    display: block;
+    max-height: fit-content;
+    width: max-content;
+    cursor: pointer;
+  }
+
+  &__drop-area {
+    width: 100%;
+    display: flex;
+    padding-left: 4px;
+    flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+    &__uploaded-file {
+      display: flex;
+      align-items: center;
+      max-width: 30%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+  }
+
+  &__no-mapped-msg {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    padding-left: 4px;
+    a {
+      text-decoration: none;
+      color: var(--color-yellow);
+      transition: color 0.5s ease-in-out;
+    }
+    a:hover {
+      color: var(--color-darkyellow);
+    }
+  }
+}
+
+.upload-text {
+  font-size: smaller;
+  font-family: monospace;
+  overflow: hidden;
+  display: inline;
+}

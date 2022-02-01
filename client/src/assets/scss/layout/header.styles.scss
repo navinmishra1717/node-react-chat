@@ -1,0 +1,23 @@
+.root {
+  flex-grow: 1;
+}
+.header__section {
+  height: 40px;
+  display: flex !important;
+  align-items: center;
+  flex-direction: row !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  .menu__button {
+    margin-right: 16px;
+  }
+  .title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem !important;
+    @include for-medium-screen-up {
+      font-size: 1.25rem !important;
+    }
+  }
+}

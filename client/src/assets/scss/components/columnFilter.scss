@@ -1,0 +1,26 @@
+.column-filter {
+  width: 100%;
+  &__label {
+    color: gray;
+  }
+
+  &__checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-wrap: wrap;
+    .Mui-checked {
+      span {
+        color: green !important;
+      }
+      color: green !important;
+      + .MuiSwitch-track {
+        background-color: green !important ;
+      }
+    }
+  }
+}
+
+.column-filter-container {
+  width: 100%;
+  margin-top: -20px;
+}

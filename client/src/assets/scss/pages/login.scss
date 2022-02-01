@@ -1,0 +1,76 @@
+.container-fluid {
+  height: 100vh;
+  //   background-color: black;
+  .login-container {
+    //   background-color: #fff;
+    width: 95%;
+    @include for-medium-screen-up {
+      max-width: 500px;
+    }
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 5px 10px #dcdcdc;
+    input[type="email"],
+    input[type="password"] {
+      width: calc(100% - 50px);
+      height: 30px;
+      border: 0;
+      border-bottom: 1px solid gray;
+      margin-bottom: 10px;
+      outline: 0 !important;
+      &:focus {
+        border-bottom: 1px solid hsl(240, 100, 64);
+      }
+      &.error {
+        border-bottom: 1px solid red;
+      }
+    }
+    .login-error-msgField {
+      font-size: 11px;
+      margin-bottom: 10px;
+      padding: 0px;
+      margin-top: -5px;
+      display: inline-block;
+      color: red;
+      letter-spacing: 1px;
+      transition: all 0.5s ease-in-out;
+      visibility: hidden;
+      &.show-error-msgField {
+        visibility: visible;
+        margin: 15px;
+      }
+    }
+    .login-button {
+      margin-top: 10px;
+      button {
+        background-color: hsl(240, 100, 64);
+        color: #fff;
+        width: 100px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid hsl(240, 100, 64);
+        cursor: pointer;
+        &:focus {
+          outline: 0 !important;
+          background-color: hsl(240, 100, 54);
+        }
+      }
+    }
+  }
+}
+.link {
+  display: inherit;
+  text-decoration: none;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

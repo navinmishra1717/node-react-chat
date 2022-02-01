@@ -1,0 +1,29 @@
+@mixin for-medium-screen-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-bigger-middle-screen {
+  @media (min-width: 850px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-medium-desktop-up {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}

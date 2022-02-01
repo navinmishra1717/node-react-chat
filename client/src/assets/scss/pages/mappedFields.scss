@@ -1,0 +1,32 @@
+.field-mapping-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.field-mapping__advertiser-selector {
+  div {
+    max-width: 400px;
+  }
+}
+
+.mappingField-form {
+  width: 100%;
+  margin: auto;
+  @include for-medium-screen-up {
+    width: 600px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    & > div,
+    h3 {
+      width: 100%;
+    }
+    h3 {
+      color: gray;
+    }
+  }
+}

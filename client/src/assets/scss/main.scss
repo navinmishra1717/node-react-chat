@@ -1,0 +1,58 @@
+// @import "react-redux-toastr/src/styles/index";
+
+/**
+  ABSTRACTS
+**/
+@import "./abstracts/variables";
+@import "./abstracts/animation";
+@import "./abstracts/mixins";
+@import "./abstracts/utility";
+
+/**
+  RESETS AND NORMALIZING/OVERWRITING MATERIAL UI'S STYLES
+**/
+@import "./base/reset";
+
+/**
+COMPONENTS
+**/
+@import "./components/bulkAction.scss";
+@import "./components/form.scss";
+@import "./components/columnFilter.scss";
+@import "./components/drawer.styles.scss";
+@import "./components/select-menu.scss";
+@import "./components/filterbox.scss";
+@import "./components/table.scss";
+@import "./components/tab-menu.scss";
+@import "./components/verticalTabMenu.scss";
+@import "./components/warning-box.scss";
+@import "./components/info-box.scss";
+@import "./components/charts_common.scss";
+@import "./components/dashboard-report-filters.scss";
+@import "./components/stat_card.scss";
+@import "./components/number-info-tiles.scss";
+/**
+  LAYOUTS
+**/
+@import "./layout/contentHeader.scss";
+@import "./layout/header.styles.scss";
+
+/**
+  PAGES
+**/
+@import "./pages/history.scss";
+@import "./pages/publishers.scss";
+@import "./pages/target.scss";
+@import "./pages/publishersLinks.scss";
+@import "./pages/logs.scss";
+@import "./pages/provider-links.scss";
+@import "./pages/profile.scss";
+@import "./pages/settings.scss";
+@import "./pages/systemlogs.scss";
+@import "./pages/home-page.scss";
+@import "./pages/login.scss";
+@import "./pages/mappedFields.scss";
+@import "./pages/csv-upload.scss";
+@import "./pages/linked-account.scss";
+@import "./pages/publisher-display-columns.scss";
+@import "./pages/remove-report.scss";

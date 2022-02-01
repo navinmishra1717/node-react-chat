@@ -1,0 +1,70 @@
+/*Styling for disabled select valuse */
+.select-value {
+  &--disabled {
+    color: var(--color-gray-2-lighter) !important;
+  }
+  &--enabled {
+    color: #333 !important;
+  }
+
+  &--dot--enabled {
+    position: relative;
+    &::before {
+      content: "";
+      border: 3px solid var(--color-green);
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+  }
+
+  &--dot--disabled {
+    &::before {
+      content: "";
+      border: 3px solid var(--color-yellow);
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    color: var(--color-gray-2-lighter) !important;
+  }
+}
+
+.autoselect-value {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--gap-small);
+  &--dot--enabled {
+    &::before {
+      display: block;
+      right: 0;
+      content: "";
+      background-color: var(--color-green);
+      z-index: 10;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+  }
+
+  &--dot--disabled {
+    &::before {
+      display: block;
+      right: 0;
+      content: "";
+      background-color: var(--color-yellow);
+      z-index: 10;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    color: var(--color-gray-2-lighter) !important;
+  }
+}
+
+.ptLinksTooltipOption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1px;
+  width: 100%;
+}

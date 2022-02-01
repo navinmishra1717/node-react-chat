@@ -1,0 +1,83 @@
+.publisher-links-manage{
+
+    &__section{
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top:2rem;
+        display: flex;
+        flex-direction: column;
+    
+        &-top{
+            display: flex;
+            justify-content:space-around;
+            align-items:center;
+            &__input{
+                .MuiFormControl-root{
+                    min-width: 200px;
+                }
+            }
+        }
+
+        &-medium{
+            .linkInfos{
+                margin-top:10px;
+                margin-bottom:10px;
+                >* {
+                    margin-bottom:10px;
+                }
+                .linkInfo{
+                    border: 1px solid #e0e0e0;
+                    border-radius: 8px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+//Individual Link Info Form
+.linkInfo{
+    position: relative;
+    &__closeBtn{
+        position: absolute;
+        top:2%;
+        right:2%;
+    }
+    &__top{
+        display: flex;
+        color:#a2a1a1;
+        justify-content:space-around;
+        align-items:flex-end;
+        &-cusDomain{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:top;
+        }
+    }
+    &__bottom{
+        display: flex;
+        .copy-icon {
+            margin-bottom: 0px !important;
+            padding: 0px !important;
+            &:hover {
+              padding: 4px !important;
+              span {
+                color:#3f51b5;
+              }
+            }
+            span {
+              color: #a2a1a1;
+              svg {
+                font-size: 1.5rem !important;
+              }
+            }
+          }
+        .MuiFormControl-root{
+            max-width: 700px;
+        }
+    }
+}
+
+

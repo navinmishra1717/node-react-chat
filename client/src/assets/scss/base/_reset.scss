@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 0.8rem;
+  @include for-medium-screen-up {
+    font-size: 1rem;
+  }
+}
+
+input {
+  @media screen and (max-width: 599px) {
+    font-size: 0.8rem !important;
+  }
+  font: inherit;
+}
+
+.MuiFormControl-root,
+.MuiFormLabel-root,
+.MuiInpueBase-input,
+.MuiMenuItem-root,
+.MuiTableCell-root {
+  @media screen and (max-width: 599px) {
+    font-size: 0.8rem !important;
+  }
+}
+
+.MuiDivider-root {
+  margin: 20px 0 !important;
+}
+
+.MuiContainer-maxWidthLg {
+  max-width: 95vw !important;
+  button {
+    max-width: 15rem;
+    padding: 10px;
+  }
+}
+
+.Mui-checked {
+  span {
+    color: green !important;
+  }
+  color: green !important;
+  + .MuiSwitch-track {
+    background-color: green !important ;
+  }
+}
+
+.MuiAccordion-root {
+  &::before {
+    background-color: #fff !important;
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-blue-2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-blue);
+}

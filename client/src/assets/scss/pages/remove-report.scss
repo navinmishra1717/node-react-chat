@@ -1,0 +1,30 @@
+.remove-report {
+  max-width: 600px;
+
+  // grid container with flexible columns for the content with
+  // max-width of 1fx and min width of 100px
+  &__info {
+    display: flex;
+    color: gray;
+    flex-direction: column;
+    gap: 1rem;
+    span {
+      display: block;
+    }
+  }
+
+  &__message {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    @include for-medium-screen-up {
+      font-size: 30px;
+    }
+
+    h3 {
+      margin-right: 10px;
+    }
+  }
+}

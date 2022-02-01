@@ -1,0 +1,13 @@
+.number-info-tiles {
+  text-align: center;
+  padding: var(--default-padding-small);
+  background-color: var(--color-gray-2-lighter);
+  color: #333;
+  h4 {
+    font-weight: bold;
+  }
+
+  @include for-medium-screen-up {
+    width: 300px;
+  }
+}

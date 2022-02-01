@@ -1,0 +1,53 @@
+.tab__menu {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+    li {
+      text-decoration: none;
+      color: var(--color-gray);
+    }
+  }
+
+  &__item {
+    @include for-medium-screen-up {
+      font-size: 1.2rem;
+    }
+
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 10px;
+    flex-direction: column;
+    transition: all 0.15s ease-in-out;
+    //spacing the items from each other
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 2px solid var(--color-primary-blue);
+      margin: auto;
+      width: 70%;
+      visibility: hidden;
+      border-radius: 10px;
+      transition: all 0.15s ease-in-out;
+    }
+    //creating the border below when hover over item
+    &:hover {
+      color: var(--color-primary-blue);
+    }
+
+    &--active {
+      color: var(--color-primary-blue);
+      &:before {
+        visibility: visible;
+      }
+    }
+  }
+}
