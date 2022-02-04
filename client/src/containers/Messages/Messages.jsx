@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import "./Messages.css";
+import React, { useEffect, useState } from 'react';
+import './Messages.css';
 
 function Messages({ socket, to }) {
   const [messages, setMessages] = useState({});
 
   useEffect(() => {
     const messageListener = (data) => {
-      console.log(13131313131);
       setMessages((prevMessages) => {
         const newMessages = { ...prevMessages };
         newMessages[data.message.id] = data.message;
@@ -34,23 +33,17 @@ function Messages({ socket, to }) {
       });
     };
 
-    socket.on("update", (data) => {
-      console.log(66666666);
-      console.log(data, "datatatatt");
+    socket.on('update', (data) => {
       setMessages(messages);
     });
-    socket.on("message", () => {
-      console.log(4444444);
-    });
-    socket.on("deleteMessage", deleteMessageListener);
-    socket.emit("getMessages", { to: to });
-    socket.on("getMessages", (messages) => setMessages(messages));
-
-    console.log(messages, "messages");
+    socket.on('message', () => {});
+    socket.on('deleteMessage', deleteMessageListener);
+    socket.emit('getMessages', { to: to });
+    socket.on('getMessages', (messages) => setMessages(messages));
 
     return () => {
-      socket.off("message", messageListener);
-      socket.off("deleteMessage", deleteMessageListener);
+      socket.off('message', messageListener);
+      socket.off('deleteMessage', deleteMessageListener);
     };
   }, [socket]);
 

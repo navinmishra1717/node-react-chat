@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   fetchUsersListStart,
   fetchUserSuccess,
   fetchUserFailure,
   updateUsersList,
-} from "../reducers/user/user.actions";
+} from '../reducers/user/user.actions';
 
 import {
   Card,
@@ -18,9 +18,9 @@ import {
   //   ListItem,
   //   ListItemIcon,
   //   ListItemText,
-} from "@material-ui/core";
-import { getUsers } from "../reducers/user/user.selector";
-import { User } from "../services/users";
+} from '@material-ui/core';
+import { getUsers } from '../reducers/user/user.selector';
+import { User } from '../services/users';
 
 const UserList = ({ socket }) => {
   const users = useSelector(getUsers);
@@ -33,11 +33,9 @@ const UserList = ({ socket }) => {
       User.fetchUsers(params)
         .then((response) => {
           if (response.success) {
-            console.log(33333333, response);
             let users = response.data.map((user) => {
               return user;
             });
-            console.log(users, "users22");
 
             stableDispatch(updateUsersList(users));
             stableDispatch(fetchUserSuccess());

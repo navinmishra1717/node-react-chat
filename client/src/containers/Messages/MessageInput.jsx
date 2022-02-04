@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // import "./MessageInput.css";
-import "./Messages.css";
+import './Messages.css';
 
 const NewMessage = ({ socket, from, to }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    socket.emit("getMessages", { to: to });
+    socket.emit('getMessages', { to: to });
 
     return () => {
       // socket.off("message", messageListener);
@@ -16,7 +16,7 @@ const NewMessage = ({ socket, from, to }) => {
   }, [socket, messages]);
 
   useEffect(() => {
-    socket.on("getMessages", (data) => {
+    socket.on('getMessages', (data) => {
       setMessages(data.messages);
     });
     return () => {};
@@ -50,10 +50,9 @@ const NewMessage = ({ socket, from, to }) => {
       newMessages.push(data);
       return newMessages;
     });
-    socket.emit("chat", data, updateMessageListener);
-    socket.emit("getMessages", { to: to });
-    console.log(454545544555);
-    setValue("");
+    socket.emit('chat', data, updateMessageListener);
+    socket.emit('getMessages', { to: to });
+    setValue('');
   };
 
   return (
