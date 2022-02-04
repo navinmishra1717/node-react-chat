@@ -1,10 +1,10 @@
 // utils
-const jwt = require("jsonwebtoken");
-const logger = require("../../commons/logger");
-const redisHelper = require("../../commons/redisHelper");
-const constants = require("../../commons/constants");
+const jwt = require('jsonwebtoken');
+const logger = require('../../commons/logger');
+const redisHelper = require('../../commons/redisHelper');
+const constants = require('../../commons/constants');
 const log = logger.log;
-const Response = require("../../commons/response");
+const Response = require('../../commons/response');
 
 /**
  * This function gets all the users in the system
@@ -15,18 +15,25 @@ const Response = require("../../commons/response");
 async function login(req, res, next) {
   try {
     const { username, password } = req.body;
+    if (!username) {
+      throw new Error('Username is required!!');
+    }
+    if (!password) {
+      throw new Error('Password is required!!');
+    }
+    let user;
     // check if user already exists
     const userString = await redisHelper.get(username);
-    const user = JSON.parse(userString);
-    if (!user) {
-      throw new Error("User not found!");
-    }
-    // match the password
-    if (password != user.password) {
-      throw new Error("Password doesnot match!");
-    }
+    if (userString) {
+      user = JSON.parse(userString);
 
-    await redisHelper.hset("users", username, { username, password });
+      // match the password
+      if (user && password != user.password) {
+        throw new Error('Password doesnot match!');
+      }
+    }
+    // register user if user not found
+    await redisHelper.hset('users', username, { username, password });
     const payload = {
       username: username,
       password: password,
@@ -35,9 +42,9 @@ async function login(req, res, next) {
     let authToken = jwt.sign(payload, constants.SECRET_KEY, {
       expiresIn: 24 * 60 * 60,
     });
-    log.info("Login success");
-    Response.successResponse(res, "Login success", {
-      user: { username: user.username },
+    log.info('Login success');
+    Response.successResponse(res, 'Login success', {
+      user: { username },
       token: authToken,
     });
   } catch (err) {
@@ -56,22 +63,22 @@ async function register(req, res, next) {
   try {
     const { username, password } = req.body;
     // validate req payload
-    log.info("creating new user");
+    log.info('creating new user');
     if (!username) {
-      throw new Error("Username is required!!");
+      throw new Error('Username is required!!');
     }
     if (!password) {
-      throw new Error("Password is required!!");
+      throw new Error('Password is required!!');
     }
     // check if user already exists
 
-    const exists = await redisHelper.hexists("users", username);
+    const exists = await redisHelper.hexists('users', username);
     if (exists) {
-      return Response.errorResponse(res, "user already exists");
+      return Response.errorResponse(res, 'user already exists');
     }
 
     // await redisHelper.set(username, { username, password });
-    await redisHelper.hset("users", username, { username, password });
+    await redisHelper.hset('users', username, { username, password });
     const payload = {
       username: username,
       password: password,
@@ -79,9 +86,9 @@ async function register(req, res, next) {
     let authToken = jwt.sign(payload, constants.SECRET_KEY, {
       expiresIn: 24 * 60 * 60,
     });
-    log.info("Register success");
+    log.info('Register success');
 
-    Response.successResponse(res, "Register success", {
+    Response.successResponse(res, 'Register success', {
       token: authToken,
     });
   } catch (err) {
